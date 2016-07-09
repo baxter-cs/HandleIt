@@ -4,9 +4,9 @@ using System.Collections;
 public class PlayerCharacter : MonoBehaviour {
 
 	Rigidbody phys;
-	public float jumpForce = 1.0f;
-	public float walkingSpeed = 1.0f;
-	public float runningSpeed = 2.0f;
+	public float jumpForce = 15.0f;
+	public float walkingSpeed = 10.0f;
+	public float runningSpeed = 20.0f;
 	public static int staminaCap = 100;
 	public int stamina = staminaCap;
 	private bool isSprinting;

@@ -22,7 +22,9 @@ public class Player : MonoBehaviour {
 	void PressedJumpButton(){
 		playerCharater.Jump();
 	}
-
+	public PlayerCharacter GetPlayerCharacter(){
+		return playerCharater;
+	}
 	private Vector3 GetInputDir(){
 		float x = Input.GetAxisRaw ("Horizontal");
 		float y = 0;
