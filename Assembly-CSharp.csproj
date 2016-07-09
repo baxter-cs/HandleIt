@@ -45,7 +45,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\CameraSpot.cs" />
+     <Compile Include="Assets\Scripts\CameraSpot.cs" />
+     <Compile Include="Assets\Scripts\Detector.cs" />
      <Compile Include="Assets\Scripts\Loot.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\PlayerCharacter.cs" />
