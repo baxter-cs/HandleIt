@@ -4,11 +4,11 @@ using System.Collections;
 public class TopDownCamera : MonoBehaviour {
 
 	Player player;
-
+	CameraSpot spotlight;
 	// Use this for initialization
 	void Start () {
 		player = GameObject.Find ("GameState").GetComponent<Player> ();;
-
+		spotlight = GetComponentInChildren<CameraSpot> ();
 	}
 
 	// Update is called once per frame
@@ -18,7 +18,7 @@ public class TopDownCamera : MonoBehaviour {
 		if (pc) {
 			target = pc.transform.position;
 		}
-
+		spotlight.LookAtPoint (target);
 		MoveTowardsTarget (target);
 	}
 
