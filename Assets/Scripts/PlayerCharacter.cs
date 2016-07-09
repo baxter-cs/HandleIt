@@ -14,9 +14,10 @@ public class PlayerCharacter : MonoBehaviour {
 	public static float walkAttention = 0.01f;
 	public static float runAttention = 0.03f;
 	public static float jumpAttention = 0.05f;
+	public static float inSensorAttention = 0.025f;
 	public static float stationaryAttention = -0.02f;
 	public static int staminaCap = 100;
-	public static float sensorAttentionThreshold = 0.47f;
+	public static float sensorAttentionThreshold = 0.1f;
 	public int stamina = staminaCap;
 	public float deadMove = 0.01f;
 	private bool isSprinting;
@@ -28,7 +29,10 @@ public class PlayerCharacter : MonoBehaviour {
 	}
 
 	void Update () {
-
+		if (sensorsInRange > 0) {
+			attentionRate += inSensorAttention;
+			attentionRate = Mathf.Clamp01 (attentionRate);
+		}
 	}
 
 	public void Move(Vector3 dir, bool sprinting) {
